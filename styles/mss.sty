@@ -24,6 +24,7 @@
 \renewcommand{\rY}[2]{\sum\limits_{#1=#2}^\infty}
 \newcommand{\fa}{\forall}
 \newcommand{\Gint}[1]{\int\limits_{#1}}  % интеграл по множеству
+\newcommand{\IE}[3][\sigma]{\int\limits_{\Sigma{\text{#2}}} #3 \,d#1}  % интеграл по поверхности. По умолчанию элемент площади \sigma
 \newcommand{\ve}[1]{\boldsymbol{#1}}  % соглашение об обозначении вектора
 \newcommand{\w}{\omega}
 \newcommand{\vprod}[3]{\begin{vmatrix}#1_1&#2_1&#3_1\\#1_2&#2_2&#3_2\\#1_3&#2_3&#3_3\end{vmatrix}}
@@ -31,5 +32,6 @@
 \newcommand{\dl}{\partial}
 \newcommand{\DP}[2]{\frac{d#1}{d#2}}
 \pagestyle{plain}
-
-
+\newcommand{\iz}[1]{\text{#1}}
+\newcommand{\iZ}[3][]{\frac{\iz{#2}}{\iz{#3}#1}}
+\newcommand{\IZ}[4]{\frac{\iz{#1}^{#2}}{\iz{#3}^{#4}}}
