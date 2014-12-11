@@ -28,11 +28,20 @@
 \newcommand{\ve}[1]{\boldsymbol{#1}}  % соглашение об обозначении вектора
 \newcommand{\w}{\omega}
 \newcommand{\vprod}[3]{\begin{vmatrix}#1_1&#2_1&#3_1\\#1_2&#2_2&#3_2\\#1_3&#2_3&#3_3\end{vmatrix}}
-\newcommand{\matder}[1]{\CP{#1}t + \CP{#1}xv_1+\CP{#1}yv_2+\CP{#1}zv_3} % материальная производная (der --- derivative)
 \newcommand{\dl}{\partial}
 \newcommand{\DP}[2]{\frac{d#1}{d#2}}
 \pagestyle{plain}
-\newcommand{\iz}[1]{\text{#1}}
+\newcommand{\iz}[1]{{\text{#1}}}
 \newcommand{\iZ}[3][]{\frac{\iz{#2}}{\iz{#3}#1}}
 \newcommand{\IZ}[4]{\frac{\iz{#1}^{#2}}{\iz{#3}^{#4}}}
 \renewcommand{\Im}{\mathop{\mathrm{Im}}}
+
+%%% Материальная производная и друзья
+\newcounter{vars}
+\setcounter{vars}{1}
+ \makeatletter
+ \def\vars#1{\expandafter\@vars\csname c@#1\endcsname}
+ \def\@vars#1{\ifcase#1\or t\or x\or y\or z\or\xi\or\eta\or\zeta\else\@ctrerr\fi}
+ \makeatother
+\renewcommand{\thevars}{\vars{vars}}
+\newcommand{\matder}[2][v_]{\CP{#2}{t} + \CP{#2}{\thevars} #1{\thevars}\refstepcounter{vars}+\CP{#2}{\thevars} #1{\thevars}\refstepcounter{vars}+\CP{#2}{\thevars}#1{\thevars}\setcounter{vars}{1}} % материальная производная (der --- derivative) ввести счётчики xyz 123 и т д
