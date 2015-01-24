@@ -45,3 +45,6 @@
  \makeatother
 \renewcommand{\thevars}{\vars{vars}}
 \newcommand{\matder}[2][v_]{\CP{#2}{t} + \CP{#2}{\thevars} #1{\thevars}\refstepcounter{vars}+\CP{#2}{\thevars} #1{\thevars}\refstepcounter{vars}+\CP{#2}{\thevars}#1{\thevars}\setcounter{vars}{1}} % материальная производная (der --- derivative) ввести счётчики xyz 123 и т д
+\makeatletter
+  \@addtoreset{equation}{section}
+\makeatother
