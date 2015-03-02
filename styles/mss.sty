@@ -47,11 +47,13 @@
  \def\@vars#1{\ifcase#1\or t\or x\or y\or z\or\xi\or\eta\or\zeta\else\@ctrerr\fi}
  \makeatother
 \renewcommand{\thevars}{\vars{vars}}
-\newcommand{\matder}[2][v_]{\CP{#2}{t} + \CP{#2}{\thevars} #1{\thevars}\refstepcounter{vars}+\CP{#2}{\thevars} #1{\thevars}\refstepcounter{vars}+\CP{#2}{\thevars}#1{\thevars}\setcounter{vars}{1}} % материальная производная (der --- derivative) ввести счётчики xyz 123 и т д
+\newcommand{\matder}[2][v_]{\CP{#2}{t} + \CP{#2}{\thevars} #1{\thevars}\refstepcounter{vars}+\CP{#2}{\thevars} #1{\thevars}\refstepcounter{vars}+\CP{#2}{\thevars}#1{\thevars}\setcounter{vars}{2}} % материальная производная (der --- derivative) ввести счётчики xyz 123 и т д
 \makeatletter
   \@addtoreset{equation}{section}
 \makeatother
+\newcommand{\Lap}[1]{\CP{^2#1}{x^2} + \CP{^2#1}{y^2}+\CP{^2#1}{z^2}}
 \renewcommand{\a}{\alpha}
 \renewcommand{\b}{\beta}
 \renewcommand{\l}{\lambda}
 \renewcommand{\kappa}{\varkappa}
+\newcommand{\RE}{\mathcal{Re}}
